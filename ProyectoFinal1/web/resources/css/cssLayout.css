@@ -30,7 +30,7 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background: blue;
     padding: 5px;
 }
 
@@ -38,12 +38,15 @@
     background-color: #dddddd;
     padding: 5px;
     margin-left: 170px;
+   
 }
 
 .right_content {
-    background-color: #dddddd;
+    position:relative;
+    background-color: white;
     padding: 5px;
     margin: 0px 170px 0px 170px;
+    
 }
 
 #top a:link, #top a:visited {
@@ -56,6 +59,14 @@
   color: black;
   font-weight : bold;
   text-decoration : underline;
+}
+
+#head{
+    background: blue;
+}
+
+body{
+    background: gray;
 }
 
 

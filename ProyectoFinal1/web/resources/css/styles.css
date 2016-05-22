@@ -4,20 +4,21 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 02/06/2015, 08:45:14 AM
-    Author     : bryanmq
+    Created on : 22/05/2016, 12:08:13 AM
+    Author     : Carolina
 */
-
-#firma 
-{
-    background: url(../imagenes/firma.png);
-    height: 119px; 
-    width: 968px; 
-    margin: auto; 
+.panel_central{
+    margin-left: 150px;
 }
 
-.panel_central 
-{
-    margin: auto;
+.panel_derecho{
+    margin-left: 150px;
+    position:relative;
+    background-color: white;
+    padding: 5px;
 }
 
+.panel_izquierdo{
+    
+    
+}
