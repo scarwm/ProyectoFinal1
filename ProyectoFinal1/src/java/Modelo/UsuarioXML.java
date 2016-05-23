@@ -31,7 +31,7 @@ public class UsuarioXML {
     private Document documento;
     private String ruta;
 
-    public UsuarioXML(File archivoXML) {
+    public UsuarioXML(File archivoXML) throws IOException {
         this.ruta = archivoXML.getAbsolutePath();
         if (archivoXML.exists()) {
             abrirArchivo();
@@ -56,13 +56,13 @@ public class UsuarioXML {
 
     }
 
-    public void abrirArchivo() {
+    public void abrirArchivo() throws IOException {
         try {
             SAXBuilder sAXBuilder = new SAXBuilder();
             sAXBuilder.setIgnoringElementContentWhitespace(true);
             documento = sAXBuilder.build(ruta);
             raiz = documento.getRootElement();
-        } catch (JDOMException | IOException ex) {
+        } catch (JDOMException ex) {
             System.out.println("error");
         }
     }

@@ -30,7 +30,7 @@ public class ControladorUsuario {
     private File archivoXML;
     private UsuarioXML usuarioXML;
 
-    public ControladorUsuario() {
+    public ControladorUsuario() throws IOException {
         archivoXML = new File("Usuario.xml");
         usuarioXML = new UsuarioXML(archivoXML);
     }
