@@ -8,17 +8,17 @@ and open the template in the editor.
     Author     : Carolina
 */
 .panel_central{
-    margin-left: 150px;
+    
 }
 
 .panel_derecho{
-    margin-left: 150px;
     position:relative;
     background-color: white;
     padding: 5px;
 }
 
 .panel_izquierdo{
-    
+    height: 0px; 
+    width:300px;
     
 }
