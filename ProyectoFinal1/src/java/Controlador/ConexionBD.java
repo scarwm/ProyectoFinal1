@@ -1,3 +1,5 @@
+package Controlador;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -5,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 
@@ -14,17 +17,15 @@ public class ConexionBD {
     public ConexionBD()
     {
         realizarConexion();
-        //registrarEstudiante("123456","Gustavo","Barranca");
-        //consultarEstudiante("123");
         //actualizarEstudiante("123","Pancha Carrazco","Alajuelita es mi Cantón");
-        eliminarEstudiante("123");
+        //eliminarEstudiante("123");
     }
     public void realizarConexion()
     {
         try {
             String userName = "root";
-            String password = "root";
-            String url = "jdbc:mysql://localhost:3306/matricula";
+            String password = "";
+            String url = "jdbc:mysql://localhost:3306/proyectofinal";
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             con = DriverManager.getConnection(url, userName, password);
             System.out.println("Conexión Realizada");
@@ -34,14 +35,14 @@ public class ConexionBD {
             e.printStackTrace();
         } 
     }
-    public boolean registrarEstudiante(String cedula, String nombre, String direccion)
+    public boolean registrarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("INSERT INTO estudiantes(cedula,nombre,direccion) VALUES ('"+cedula+"','"+nombre+"','"+direccion+"')");
+                ejecuto = cmd.execute("INSERT INTO estudiantes(cedula,nombre,apellido1,apellido2,correo,telefono,contrasena) VALUES ("+cedula+",'"+nombre+"','"+apellido1+"','"+apellido2+"','"+correo+"','"+telefono+"','"+contrasena+"')");
                 
                return true;
                // rs.close();
@@ -50,11 +51,10 @@ public class ConexionBD {
         {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
             return false;
-        }
-        
+        }        
     }
     
-    public boolean actualizarEstudiante(String cedula, String nombre, String direccion)
+    public boolean modificarUsuario(String cedula, String nombre, String direccion)
     {
         ResultSet rs = null;
         Statement cmd = null;
@@ -90,21 +90,18 @@ public class ConexionBD {
         }     
     }
     
-    public void consultarEstudiante(String cedula)
+    public Boolean consultarUsuario(String cedula, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
 
         try {
                 cmd = con.createStatement();
-                rs = cmd.executeQuery("SELECT * FROM estudiantes where cedula='"+cedula+"'");
+                rs = cmd.executeQuery("SELECT * FROM usuario where cedula='"+cedula+"' and contrasena='"+contrasena+"'");
                 
                 while (rs.next()) 
                 {
-                    String nombre = rs.getString("nombre");
-                    String direccion=rs.getString("direccion");
-                    
-                    System.out.println("Información de la BD: Nombre: "+nombre+" direccion: "+direccion); 
+                    return true; 
                 }
                 rs.close();
         }
@@ -112,7 +109,7 @@ public class ConexionBD {
         {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
         }
-        
+     return false;   
     }
     
 }

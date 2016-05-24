@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 import org.jdom2.JDOMException;
@@ -25,14 +26,18 @@ import org.jdom2.JDOMException;
 @RequestScoped
 
 public class ControladorUsuario {
+    @ManagedProperty(value = "#{usuario}")
     
-    private Usuario usuario;
+    public Usuario usuario;
     private File archivoXML;
     private UsuarioXML usuarioXML;
-
+    private ConexionBD conexionBD;
+            
     public ControladorUsuario() throws IOException {
+        
         archivoXML = new File("Usuario.xml");
         usuarioXML = new UsuarioXML(archivoXML);
+        conexionBD= new ConexionBD();
     }
     
     public Usuario getUsuario() {

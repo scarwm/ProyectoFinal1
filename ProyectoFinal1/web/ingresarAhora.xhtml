@@ -26,10 +26,10 @@
                         </h1>
                         <h:panelGrid columns="1">
                             <p:outputLabel value="Correo: "/>
-                            <p:inputText value="#{usuario.correo}"/>
+                            <p:inputText value="123@123.com" required="false"/>
                             <br/>
                             <p:outputLabel value="Contraseña: "/>
-                            <p:password value="#{usuario.contraseña}"/>
+                            <p:password value="123"/>
                             <p:commandButton value="Ingresar" icon="ui-icon-extlink" action="#{manejadorUsuario.login(usuario.contraseña, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
@@ -39,17 +39,21 @@
                                 Registrarse 
                             </font>
                         </h1>
-                            <h:panelGrid columns="2">
+                            <h:panelGrid columns="3">
                             <p:outputLabel for="nombre" value="Nombre:"/>
                             <p:inputText id="nombre" value="#{controladorUsuario.usuario.nombre}" required="true" requiredMessage="Escriba el nombre"/>
                             <p:message for="nombre"/>
-                            
-                            <p:outputLabel for="apellidos" value="Apellidos"/>
-                            <p:inputText id="apellidos" value="#{controladorUsuario.usuario.apellidos}" required="true" requiredMessage="Escriba los apellidos"/>
-                            <p:message for="apellidos"/>
+                           
+                           <p:outputLabel for="apellido" value="Apellido"/>
+                            <p:inputText id="apellido" value="#{controladorUsuario.usuario.apellidos}" required="true" requiredMessage="Escriba los apellidos"/>
+                            <p:message for="apellido"/>
+                             
+                            <p:outputLabel for="cedula" value="Cedula"/>
+                            <p:inputText id="cedula" value="#{controladorUsuario.usuario.cedula}" required="true" requiredMessage="Escriba la cedula"/>
+                            <p:message for="cedula"/>
                             
                             <p:outputLabel for="correo" value="Correo"/>
-                            <p:inputText id="correo" value="#{controladorUsuario.usuario.correo}" required="true" requiredMessage="Escriba el correo"/>
+                            <p:inputText id="correo" value="123@hola.com" required="true" requiredMessage="Escriba el correo"/>
                             <p:message for="correo"/>
                             
                             <p:outputLabel for="numero" value="Número telefónico"/>
@@ -62,7 +66,7 @@
                             
                             <p:outputLabel for="contrasenna" value="Confirmar contraseña: "/>
                             <p:password id="contrasenna" value="#{controladorUsuario.usuario.contraseña}" required="true" requiredMessage="Debe confirmar la contraseña"/>
-                            <p:commandButton ajax="false" value="Listo" icon="ui-icon-extlink" action="#{controladorUsuario.agregarUsuario(e)}" />
+                            <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorUsuario.agregarUsuario(e)}" />
                         </h:panelGrid>                  
                     </h:form>
                 </ui:define>
