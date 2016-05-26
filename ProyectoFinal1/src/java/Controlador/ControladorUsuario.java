@@ -59,7 +59,7 @@ public class ControladorUsuario {
                 return "loginUser";
             }
         } 
-        return "";
+        return "formulariosPrincipal";
     }
 
     public Usuario getInfoUsuario() {

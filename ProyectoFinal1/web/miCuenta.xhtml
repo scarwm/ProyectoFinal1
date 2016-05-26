@@ -11,8 +11,9 @@
     <h:body>
         <div>
             <ui:composition template="principal.xhtml">
-                <ui:define name="contentI" >
+                <ui:define name="contentIII" >
                     <h:form>
+                        <h2>Puede modificar sus datos</h2>
                         <h:panelGrid columns="3">
                             <p:outputLabel for="nombre" value="Nombre:"/>
                             <p:inputText id="nombre"/>
@@ -38,7 +39,8 @@
                             <p:password id="contrasena" />
                             <p:message for="contrasena"/>
                             
-                            <p:commandButton ajax="false" value="Aceptar" />
+                            <p:commandButton ajax="false" value="Modificar"/>
+                            <p:commandButton value="Regresar" ajax="false" action="principal" immediate="true"/>
                         </h:panelGrid>
                     </h:form>
                 </ui:define>
