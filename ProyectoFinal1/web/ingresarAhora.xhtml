@@ -26,10 +26,10 @@
                         </h1>
                         <h:panelGrid columns="1">
                             <p:outputLabel value="Correo: "/>
-                            <p:inputText value="123@123.com" required="false"/>
+                            <p:inputText value="#{usuario.correo}" required="false"/>
                             <br/>
                             <p:outputLabel value="Contraseña: "/>
-                            <p:password value="123"/>
+                            <p:password value="#{usuario.contraseña}"/>
                             <p:commandButton value="Ingresar" icon="ui-icon-extlink" action="#{manejadorUsuario.login(usuario.contraseña, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
@@ -53,7 +53,7 @@
                             <p:message for="cedula"/>
                             
                             <p:outputLabel for="correo" value="Correo"/>
-                            <p:inputText id="correo" value="123@hola.com" required="true" requiredMessage="Escriba el correo"/>
+                            <p:inputText id="correo" value="#{controladorUsuario.usuario.correo}" required="true" requiredMessage="Escriba el correo"/>
                             <p:message for="correo"/>
                             
                             <p:outputLabel for="numero" value="Número telefónico"/>
