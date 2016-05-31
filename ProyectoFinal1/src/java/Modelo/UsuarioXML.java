@@ -71,21 +71,24 @@ public class UsuarioXML {
         // nombre, apellidos,correo, telefono,contraseña;
         Element usuario = new Element("usuario");
         Element nombre = new Element("nombre");
-        Element apellido = new Element("apellido");
+        Element apellido1 = new Element("apellido1");
+        Element apellido2 = new Element("apellido2");
         Attribute cedula = new Attribute("cedula", user.getCedula());
         Element correo = new Element("correo");
         Element telefono = new Element("telefono"); 
         Element contrasena = new Element("contrasena");
 
         nombre.addContent(user.getNombre());
-        apellido.addContent(user.getApellidos());
+        apellido1.addContent(user.getApellido1());
+        apellido2.addContent(user.getApellido2());
         correo.addContent(user.getCorreo());
         telefono.addContent(user.getTelefono());        
         contrasena.addContent(user.getContraseña());
 
         usuario.setAttribute(cedula);
         usuario.addContent(nombre);
-        usuario.addContent(apellido);
+        usuario.addContent(apellido1);
+        usuario.addContent(apellido2);
         usuario.addContent(correo);
         usuario.addContent(telefono);
         usuario.addContent(contrasena);
@@ -100,7 +103,8 @@ public class UsuarioXML {
             if (usuario.getChildText("contrasena").equals(contrasena) && usuario.getChildText("correo").equals(correo)) {
                 return new Usuario(
                         usuario.getChildText("nombre"),
-                        usuario.getChildText("apellido"),
+                        usuario.getChildText("apellido1"),  
+                        usuario.getChildText("apellido2"),
                         usuario.getAttributeValue("cedula"),
                         usuario.getChildText("correo"),
                         usuario.getChildText("telefono"),
@@ -117,7 +121,8 @@ public class UsuarioXML {
                 if (index == 1) {
                     return new Usuario(
                          usuario.getChildText("nombre"),
-                        usuario.getChildText("apellido"),
+                        usuario.getChildText("apellido1"),
+                        usuario.getChildText("apellido2"),
                         usuario.getAttributeValue("cedula"),
                         usuario.getChildText("correo"),
                         usuario.getChildText("telefono"),
@@ -139,7 +144,8 @@ public class UsuarioXML {
         for (Element listaE1 : listaE) {
             usuario = new Usuario();
             usuario.setNombre(listaE1.getChildText("nombre"));
-            usuario.setApellidos(listaE1.getChildText("apellido"));
+            usuario.setApellido1(listaE1.getChildText("apellido1"));
+            usuario.setApellido2(listaE1.getChildText("apellido2"));
             usuario.setCedula(listaE1.getAttributeValue("cedula"));
             usuario.setCorreo(listaE1.getChildText("correo"));
             usuario.setTelefono(listaE1.getChildText("telefono"));
@@ -151,7 +157,8 @@ public class UsuarioXML {
     public void modificarUsuario(Usuario user) {
         Element usuarioEncontrado = (Element) this.verificarUsuarioXCedula(user.getCedula(), 0);
         usuarioEncontrado.getChild("nombre").setText(user.getNombre());
-        usuarioEncontrado.getChild("apellido").setText(user.getApellidos());
+        usuarioEncontrado.getChild("apellido1").setText(user.getApellido1());
+        usuarioEncontrado.getChild("apellido2").setText(user.getApellido2());
         usuarioEncontrado.getChild("correo").setText(user.getCorreo());
         usuarioEncontrado.getChild("telefono").setText(user.getTelefono());
         usuarioEncontrado.getChild("contrasena").setText(user.getContraseña());

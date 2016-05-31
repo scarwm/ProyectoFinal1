@@ -17,19 +17,22 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 public class Usuario{
   
-    private String nombre, apellidos, cedula, correo, telefono,contraseña;
+    private String nombre, apellido1,apellido2, cedula, correo, telefono,contraseña;
     
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidos, String cedula, String correo, String telefono, String contraseña) {
+    public Usuario(String nombre, String apellido1, String apellido2, String cedula, String correo, String telefono, String contraseña) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.cedula = cedula;
         this.correo = correo;
         this.telefono = telefono;
         this.contraseña = contraseña;
     }
+
+    
 
     public String getNombre() {
         return nombre;
@@ -39,12 +42,20 @@ public class Usuario{
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido1() {
+        return apellido1;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
     }
 
     public String getCorreo() {

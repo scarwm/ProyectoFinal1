@@ -49,6 +49,8 @@ public class ControladorUsuario {
     }
 
     public String agregarUsuario(ActionEvent e) throws JDOMException, IOException {
+       
+        conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContraseña());
         usuarioXML.addUser(this.usuario);
         return "index";
     }
@@ -56,10 +58,10 @@ public class ControladorUsuario {
     public String login(String contraseña, String correo) throws JDOMException, IOException {
         if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
             if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
-                return "loginUser";
+                return "formulariosPrincipal";
             }
         } 
-        return "formulariosPrincipal";
+        return "index";
     }
 
     public Usuario getInfoUsuario() {
