@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>FormularioD1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/cssLayout.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/default.css"/>
+    </h:head>
+    <h:body>
+        <div>
+            <ui:composition template="principal.xhtml">              
+                <ui:define name="contentIII" >
+                    <h:form> 
+                            <h:panelGrid columns="3">
+                            <p:outputLabel for="nombre" value="Nombre:"/>
+                            <p:inputText id="nombre" value="#{controladorFormulario.formulario.nombre}" required="true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="nombre"/>
+                            <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorFormulario.agregarFormulario(e)}" />
+                        </h:panelGrid>                  
+                    </h:form>
+                </ui:define>
+            </ui:composition>
+        </div>
+    </h:body>
+</html>
+
