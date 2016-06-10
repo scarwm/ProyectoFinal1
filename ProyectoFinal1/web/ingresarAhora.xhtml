@@ -30,7 +30,7 @@
                             <br/>
                             <p:outputLabel value="Contraseña: "/>
                             <p:password value="#{usuario.contraseña}"/>
-                            <p:commandButton value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
+                            <p:commandButton value="Ingresar" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
                         <br/>

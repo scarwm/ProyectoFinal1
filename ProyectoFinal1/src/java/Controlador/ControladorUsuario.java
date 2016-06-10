@@ -56,8 +56,10 @@ public class ControladorUsuario {
     }
 
     public String login(String contraseña, String correo) throws JDOMException, IOException {
+        System.out.println("entro por aca");
         if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
             if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
+                System.out.println("entra");
                 return "formulariosPrincipal";
             }
         } 
