@@ -56,11 +56,10 @@ public class ControladorUsuario {
     }
 
     public String login(String contraseña, String correo) throws JDOMException, IOException {
-        if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
-            if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
+        if (!"".equals(contraseña) && !"".equals(correo)) {
+            if(conexionBD.consultarUsuario(contraseña, correo)==true)
                 return "formulariosPrincipal";
-            }
-        } 
+            } 
         return "index";
     }
 

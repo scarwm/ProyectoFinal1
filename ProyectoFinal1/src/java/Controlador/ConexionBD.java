@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 
 
@@ -17,8 +16,7 @@ public class ConexionBD {
     public ConexionBD()
     {
         realizarConexion();
-        //actualizarEstudiante("123","Pancha Carrazco","Alajuelita es mi Cantón");
-        //eliminarEstudiante("123");
+        
     }
     public void realizarConexion()
     {
@@ -61,7 +59,7 @@ public class ConexionBD {
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("UPDATE `estudiantes` SET cedula='"+cedula+"',nombre='"+nombre+"',direccion='"+direccion+"' WHERE cedula='"+cedula+"'"); 
+                ejecuto = cmd.execute("UPDATE `usuario` SET cedula='"+cedula+"',nombre='"+nombre+"',direccion='"+direccion+"' WHERE cedula='"+cedula+"'"); 
                return true;
                // rs.close();
         }
@@ -72,14 +70,14 @@ public class ConexionBD {
         }     
     }
     
-    public boolean eliminarEstudiante(String cedula)
+    public boolean eliminarUsuario(String cedula)
     {
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("DELETE FROM `estudiantes` WHERE cedula='"+cedula+"'"); 
+                ejecuto = cmd.execute("DELETE FROM `usuario` WHERE cedula='"+cedula+"'"); 
                return true;
                // rs.close();
         }
@@ -90,20 +88,20 @@ public class ConexionBD {
         }     
     }
     
-    public Boolean consultarUsuario(String cedula, String contrasena)
+    public Boolean consultarUsuario(String correo, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
 
         try {
                 cmd = con.createStatement();
-                rs = cmd.executeQuery("SELECT * FROM usuario where cedula='"+cedula+"' and contrasena='"+contrasena+"'");
+                rs = cmd.executeQuery("SELECT * FROM usuario where correo='"+correo+"' and contrasena='"+contrasena+"'");
                 
-                while (rs.next()) 
+                if (rs!=null) 
                 {
                     return true; 
                 }
-                rs.close();
+                
         }
         catch(Exception e)
         {
