@@ -52,14 +52,14 @@ public class ConexionBD {
         }        
     }
     
-    public boolean modificarUsuario(String cedula, String nombre, String direccion)
+    public boolean modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("UPDATE `usuario` SET cedula='"+cedula+"',nombre='"+nombre+"',direccion='"+direccion+"' WHERE cedula='"+cedula+"'"); 
+                ejecuto = cmd.execute("UPDATE `usuario` SET cedula='"+cedula+"',nombre='"+nombre+"',apellido1='"+apellido1+"' ,apellido2='"+apellido2+"' ,correo='"+correo+"' ,telefono='"+telefono+"' ,contrasena='"+contrasena+"' WHERE cedula='"+cedula+"'"); 
                return true;
                // rs.close();
         }
