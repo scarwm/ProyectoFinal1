@@ -99,7 +99,9 @@ public class ConexionBD {
                 
                 if (rs!=null) 
                 {
-                    return true; 
+                    if(rs.first()){
+                        return true; 
+                    }
                 }
                 
         }

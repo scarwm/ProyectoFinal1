@@ -55,12 +55,30 @@ public class ControladorUsuario {
         return "index";
     }
 
-    public String login(String contraseña, String correo) throws JDOMException, IOException {
+    /*public String login(String contraseña, String correo) throws JDOMException, IOException {
         if (!"".equals(contraseña) && !"".equals(correo)) {
             if(conexionBD.consultarUsuario(contraseña, correo)==true)
                 return "formulariosPrincipal";
             } 
         return "index";
+    }*/
+    public String login(String contraseña, String correo) throws JDOMException, IOException {
+        if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
+            if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
+                if(conexionBD.consultarUsuario(contraseña, correo)==true){
+                    return "formulariosPrincipal";
+                }
+            }
+        } else {
+            if (usuario.getCorreo().equals("usuario@setena.com") && usuario.getContraseña().equals("123")) {
+                return "registrarse";
+            }
+        }
+        return "index";
+    }//fin metodo
+    
+    public void modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena){
+        conexionBD.modificarUsuario(cedula, nombre, apellido1, apellido2, correo, telefono, contrasena);
     }
 
     public Usuario getInfoUsuario() {

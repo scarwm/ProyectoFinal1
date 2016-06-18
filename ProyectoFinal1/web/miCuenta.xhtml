@@ -16,31 +16,35 @@
                         <h2>Puede modificar sus datos</h2>
                         <h:panelGrid columns="3">
                             <p:outputLabel for="nombre" value="Nombre:"/>
-                            <p:inputText id="nombre"/>
+                            <p:inputText id="nombre" value="#{controladorUsuario.infoUsuario.nombre}" required="true"/>
                             <p:message for="nombre"/>
                            
-                           <p:outputLabel for="apellido" value="Apellido"/>
-                            <p:inputText id="apellido"/>
-                            <p:message for="apellido"/>
-                             
+                           <p:outputLabel for="apellido1" value="Primer apellido"/>
+                           <p:inputText id="apellido1" value="#{controladorUsuario.usuario.apellido1}" required="true"/>
+                            <p:message for="apellido1"/>
+                           
+                            <p:outputLabel for="apellido2" value="Segundo apellido"/>
+                            <p:inputText id="apellido2" value="#{controladorUsuario.usuario.apellido2}"/>
+                            <p:message for="apellido2"/>
+                            
                             <p:outputLabel for="cedula" value="Cedula"/>
-                            <p:inputText id="cedula" />
+                            <p:inputMask id="cedula" value="#{controladorUsuario.usuario.cedula}" mask="9-9999-9999"/>
                             <p:message for="cedula"/>
                             
                             <p:outputLabel for="correo" value="Correo"/>
-                            <p:inputText id="correo" />
+                            <p:inputText id="correo" value="#{controladorUsuario.usuario.correo}" />
                             <p:message for="correo"/>
                             
                             <p:outputLabel for="numero" value="Número telefónico"/>
-                            <p:inputText id="numero" />
+                            <p:inputText id="numero" value="#{controladorUsuario.usuario.telefono}" />
                             <p:message for="numero"/>
                             
                             <p:outputLabel for="contrasena" value="Contraseña: "/>
-                            <p:password id="contrasena" />
+                            <p:password id="contrasena" value="#{controladorUsuario.usuario.contraseña}"/>
                             <p:message for="contrasena"/>
                             
                             <p:commandButton ajax="false" value="Modificar"/>
-                            <p:commandButton value="Regresar" ajax="false" action="principal" immediate="true"/>
+                            <p:commandButton value="Regresar" ajax="false" action="#{controladorUsuario.modificarUsuario()}" immediate="true"/>
                         </h:panelGrid>
                     </h:form>
                 </ui:define>

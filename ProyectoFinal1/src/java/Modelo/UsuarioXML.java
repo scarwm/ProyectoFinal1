@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -100,6 +99,7 @@ public class UsuarioXML {
     public Usuario verificarUsuario(String contrasena, String correo) {
         List<Element> listaUsuarios = (List<Element>) raiz.getChildren();
         for (Element usuario : listaUsuarios) {
+            System.out.println("va a mostrar contraseña "+ usuario.getChildText("contrasena"));
             if (usuario.getChildText("contrasena").equals(contrasena) && usuario.getChildText("correo").equals(correo)) {
                 return new Usuario(
                         usuario.getChildText("nombre"),
@@ -111,7 +111,7 @@ public class UsuarioXML {
                         usuario.getChildText("contrasena"));
             }
         }
-        return null;
+        return null;       
     }
 
     public Object verificarUsuarioXCedula(String cedula, int index) {
