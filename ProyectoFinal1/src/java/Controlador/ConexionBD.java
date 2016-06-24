@@ -99,9 +99,9 @@ public class ConexionBD {
                 
                 if (rs!=null) 
                 {
-                    if(rs.first()){
+                    //if(rs.first()){
                         return true; 
-                    }
+                    //}
                 }
                 
         }
