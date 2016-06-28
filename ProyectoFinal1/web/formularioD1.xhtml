@@ -17,10 +17,128 @@
             <ui:composition template="principal.xhtml">              
                 <ui:define name="contentIII" >
                     <h:form> 
-                            <h:panelGrid columns="3">
-                            <p:outputLabel for="nombre" value="Nombre:"/>
-                            <p:inputText id="nombre" value="#{controladorFormulario.formulario.nombre}" required="true" requiredMessage="Escriba el nombre"/>
+                        <h:panelGrid columns="3">
+<!--nombreActivi, razon, identificacion, domicilio, otrasSenas, telefono, correo, fax, codigoPostal-->
+                            <p:outputLabel for="nombre" value="1. Nombre de la actividad, obra o proyecto "/>
+                            <p:inputText id="nombre" value="#{controladorFormulario.formulario.nombreActivi}"  required="true" requiredMessage="Escriba el nombre"/>
                             <p:message for="nombre"/>
+
+                            <p:outputLabel for="nomORazSocialDPropietario" value="  2. Nombre o razon social del propietario"/>
+                            <p:inputText id="nomORazSocialDPropietario" value="#{controladorFormulario.formulario.razon}"  required="true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="nomORazSocialDPropietario"/>
+
+                            <p:outputLabel for="docDeIdentidad" value="  3. Documento de identidad"/>
+                            <p:inputText id="docDeIdentidad" value="#{controladorFormulario.formulario.identificacion}"  required="true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="docDeIdentidad"/>
+
+                            <p:outputLabel for="domiSociODireccionex" value="  4. Direccion"/>
+                            <p:inputText id="domiSociODireccionex" value="#{controladorFormulario.formulario.domicilio}"  required="true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="domiSociODireccionex"/>
+
+                            <p:outputLabel for="otrasSeñas" value="  5. Otras señas"/>
+                            <p:inputText id="otrasSeñas" value="#{controladorFormulario.formulario.otrasSenas}"  required="true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="otrasSeñas"/>
+
+                            <p:outputLabel for="numDeTel" value="  6. Telefono"/>
+                            <p:inputText id="numDeTel" value="#{controladorFormulario.formulario.telefono}" required= "true" requiredMessage="Escriba el nombre"/>
+                            <p:message for="numDeTel"/>
+
+                            <p:outputLabel for="correoElec" value="  7. Correo"/>
+                            <p:inputText id="correoElec" value="#{controladorFormulario.formulario.correo}" required="true" requiredMessage="dd"/>
+                            <p:message for="correoElec"/>
+
+                            <p:outputLabel for="fax1" value="  8. Fax"/>
+                            <p:inputText id="fax1" value="#{controladorFormulario.formulario.fax}" required="true" requiredMessage="caa"/>
+                            <p:message for="fax1"/>
+
+                            <p:outputLabel for="codigoPostal1" value="  9. Codigo postal"/>
+                            <p:inputText id="codigoPostal1" value="#{controladorFormulario.formulario.codigoPostal}" required="true" requiredMessage="ca"/>
+                            <p:message for="codigoPostal1"/>
+<!--correoAlternativo,provincia,canton, distrito, repreLegal,apellidoRepre, estadoCivil, profesion, numIdentidad-->
+                            <p:outputLabel for="correoAlternativo" value="  10. Correo alternativo"/>
+                            <p:inputText id="correoAlternativo" value="#{controladorFormulario.formulario.correoAlternativo}" required="true" requiredMessage="jj"/>
+                            <p:message for="correoAlternativo"/>
+
+                            <p:outputLabel for="nomProvincia" value="  11. Provincia"/>
+                            <p:inputText id="nomProvincia" value="#{controladorFormulario.formulario.provincia}" required="treu"/>
+                            <p:message for="nomProvincia"/>
+
+                            <p:outputLabel for="nombCanton" value="  12. Canton"/>
+                            <p:inputText id="nombCanton" value="#{controladorFormulario.formulario.canton}" required="true"/>
+                            <p:message for="nombCanton"/>
+
+                            <p:outputLabel for="nomdistrito" value="  13. Distrito"/>
+                            <p:inputText id="nomdistrito" value="#{controladorFormulario.formulario.distrito}" required="true"/>
+                            <p:message for="nomdistrito"/>
+
+                            <p:outputLabel for="otrasSeñas2" value="  14. Otras señas"/>
+                            <p:inputText id="otrasSeñas2" value="#{controladorFormulario.formulario.repreLegal}" required="true" requiredMessage="ds"/>
+                            <p:message for="otrasSeñas2"/>
+                            
+                            <p:outputLabel for="nomRepreLegal" value="  15. Nombre"/>
+                            <p:inputText id="nomRepreLegal" value="#{controladorFormulario.formulario.apellidoRepre}" required="true" requiredMessage="s"/>
+                            <p:message for="nomRepreLegal"/>
+
+                            <p:outputLabel for="apellidosRepreLegal" value="  16. Apellidos"/>
+                            <p:inputText id="apellidosRepreLegal" value="#{controladorFormulario.formulario.estadoCivil}" required="true" requiredMessage="s"/>
+                            <p:message for="apellidosRepreLegal"/>
+
+                            <p:outputLabel for="profecionRepreLegal" value="  18. Profesión / Oficio "/>
+                            <p:inputText id="profecionRepreLegal" value="#{controladorFormulario.formulario.profesion}" required="true" requiredMessage="s"/>
+                            <p:message for="profecionRepreLegal"/>
+
+                            <p:outputLabel for="numCeduRepreLegal" value="  20. Numero de identidad"/>
+                            <p:inputText id="numCeduRepreLegal" value="##{controladorFormulario.formulario.numIdentidad}" required="true" requiredMessage="s"/>
+                            <p:message for="numCeduRepreLegal"/>
+<!--telefonoRepreLegal, faxRepreLegal, codigoPostalRepreLegal, correoRepreLegal, CIIU, IAP, consultor-->
+                            <p:outputLabel for="numTelefRepreLegal" value="  21. Telefono"/>
+                            <p:inputText id="numTelefRepreLegal" value="##{controladorFormulario.formulario.telefonoRepreLegal}" required="true" requiredMessage="s"/>
+                            <p:message for="numTelefRepreLegal"/>
+
+                            <p:outputLabel for="numDeFaxRepreLegal" value="  22. Fax"/>
+                            <p:inputText id="numDeFaxRepreLegal" value="#{controladorFormulario.formulario.faxRepreLegal}" required="true" requiredMessage="s"/>
+                            <p:message for="numDeFaxRepreLegal"/>
+
+                            <p:outputLabel for="codigoPostalRepreLegal" value="  23. Codigo postal"/>
+                            <p:inputText id="codigoPostalRepreLegal" value="#{controladorFormulario.formulario.codigoPostalRepreLegal}" required="true" requiredMessage="s"/>
+                            <p:message for="codigoPostalRepreLegal"/>
+
+                            <p:outputLabel for="correoRepreLegal" value="  24. Correo Electronico"/>
+                            <p:inputText id="correoRepreLegal" value="#{controladorFormulario.formulario.correoRepreLegal}" required="true" requiredMessage="s"/>
+                            <p:message for="correoRepreLegal"/>
+                            
+                            <p:outputLabel for="numCiiu" value="  25. Numero CIIU"/>
+                            <p:inputText id="numCiiu" value="#{controladorFormulario.formulario.ciiu}" required="true" requiredMessage="s"/>
+                            <p:message for="numCiiu"/>
+
+                            <p:outputLabel for="clasiSeguIAP" value="  26. Clasificacion segun IAP"/>
+                            <p:inputText id="clasiSeguIAP" value="#{controladorFormulario.formulario.iap}" required="true" requiredMessage="s"/>
+                            <p:message for="clasiSeguIAP"/>
+
+                            <p:outputLabel for="nomConsulRespon"  value="  27. Nombre de consultor ambiental"/>
+                            <p:inputText id="nomConsulRespon" value="#{controladorFormulario.formulario.consultor}" required="true" requiredMessage="s"/>
+                            <p:message for="nomConsulRespon"/>
+<!--correoConsultor, numSetena, numTelefono,vigencia,resolucion-->
+                            <p:outputLabel for="correoConsulRespon" value="  28. Correo de consultor ambiental "/>
+                            <p:inputText id="correoConsulRespon" value="#{controladorFormulario.formulario.correoConsultor}" required="true" requiredMessage="s"/>
+                            <p:message for="correoConsulRespon"/>
+
+                            <p:outputLabel for="numDRegisAnteSeConsulRespon" value="  29. Numero de registro SETENA"/>
+                            <p:inputText id="numDRegisAnteSeConsulRespon" value="#{controladorFormulario.formulario.numSetena}" required="true" requiredMessage="s"/>
+                            <p:message for="numDRegisAnteSeConsulRespon"/>
+
+                            <p:outputLabel for="numTelConsulRespon" value="  30. Telefono"/>
+                            <p:inputText id="numTelConsulRespon" value="##{controladorFormulario.formulario.numTelefono}" required="true" requiredMessage="s"/>
+                            <p:message for="numTelConsulRespon"/>
+
+                            <p:outputLabel for="vigenteHasta"  value="  31. Vigente hasta"/>
+                            <p:inputText id="vigenteHasta" value="##{controladorFormulario.formulario.vigencia}" required="true" requiredMessage="s"/>
+                            <p:message for="vigenteHasta"/>
+
+                            <p:outputLabel for="porResolu" value="  32. Por resolucion No."/>
+                            <p:inputText id="porResolu" value="##{controladorFormulario.formulario.resolucion}" required="true" requiredMessage="s"/>
+                            <p:message for="porResolu"/>
+
                             <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorFormulario.agregarFormulario(e)}" />
                         </h:panelGrid>                  
                     </h:form>
