@@ -1,4 +1,6 @@
-﻿package Controlador;
+
+package Controlador;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,7 +28,7 @@ public class ConexionBD {
             String url = "jdbc:mysql://localhost:3306/proyectofinal";
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             con = DriverManager.getConnection(url, userName, password);
-            System.out.println("Conexión Realizada");
+            System.out.println("Conexion Realizada");
         } catch (Exception e) {
             System.err.println("Cannot connect to database server");
             System.err.println(e.getMessage());
