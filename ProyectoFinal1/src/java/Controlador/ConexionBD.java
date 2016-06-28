@@ -88,20 +88,24 @@ public class ConexionBD {
         }     
     }
     
-    public Boolean consultarUsuario(String correo, String contrasena)
+    public Boolean consultarUsuario(String contrasena, String correo)
     {
         ResultSet rs = null;
         Statement cmd = null;
+        Boolean existe=false;
+        String query;
 
         try {
                 cmd = con.createStatement();
-                rs = cmd.executeQuery("SELECT * FROM usuario where correo='"+correo+"' and contrasena='"+contrasena+"'");
+                query = "SELECT Count(correo) as cuenta FROM usuario where correo='"+correo+"' and contrasena='"+contrasena+"'";
+                //System.out.println(query);
+                rs = cmd.executeQuery(query);
                 
-                if (rs!=null) 
-                {
-                    //if(rs.first()){
-                        return true; 
-                    //}
+                if (rs!=null) {
+                    rs.next();
+                    existe = rs.getInt("cuenta") != 0;
+                    //System.err.println("Existe -> "+existe);
+                    return existe; 
                 }
                 
         }
