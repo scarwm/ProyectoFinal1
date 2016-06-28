@@ -1,0 +1,29 @@
+/ProyectoFinal1/nbproject/private/
+/ProyectoFinal1/build/
+/ProyectoFinal1/dist/
+*.class
+.DS_Store
+.metadata
+.settings
+.classpath
+.project
+target/
+
+ProyectoFinal1/nbproject/build-il1/nbproject/build-impl.xml~
+	
+# NetBeans specific #
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Class Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
