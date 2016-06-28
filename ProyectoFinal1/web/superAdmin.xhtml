@@ -21,17 +21,10 @@
                         <p:growl id="growl" />
                         <h1>
                             <font color="blue">
-                                Ingrese ahora 
+                                Super admin 
                             </font>
                         </h1>
-                        <h:panelGrid columns="1">
-                            <p:outputLabel value="Correo: "/>
-                            <p:inputText value="#{usuario.correo}" required="false"/>
-                            <br/>
-                            <p:outputLabel value="Contraseña: "/>
-                            <p:password value="#{usuario.contraseña}"/>
-                            <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
-                        </h:panelGrid>
+                        
                         <br/>
                         <br/>                                      
                     </h:form>

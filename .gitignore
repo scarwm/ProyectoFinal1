@@ -9,7 +9,7 @@
 .project
 target/
 
-
+ProyectoFinal1/nbproject/build-il1/nbproject/build-impl.xml~
 	
 # NetBeans specific #
 nbproject/private/
@@ -19,6 +19,7 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+nbproject/
 
 # Class Files #
 *.class
@@ -27,3 +28,4 @@ nb-configuration.xml
 *.jar
 *.war
 *.ear
+*~

@@ -1,4 +1,4 @@
-package Controlador;
+﻿package Controlador;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -88,7 +88,8 @@ public class ConexionBD {
         }     
     }
     
-      public Boolean consultarUsuario(String contrasena, String correo)
+
+    public Boolean consultarUsuario(String contrasena, String correo)
     {
         ResultSet rs = null;
         Statement cmd = null;

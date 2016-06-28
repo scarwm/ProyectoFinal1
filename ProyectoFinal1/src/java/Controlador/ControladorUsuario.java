@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -55,28 +55,21 @@ public class ControladorUsuario {
         return "index";
     }
 
-    public String login(String contrasena, String correo) throws JDOMException, IOException {
-        if (!"".equals(contrasena) && !"".equals(correo)) {
-            if(conexionBD.consultarUsuario(contrasena, correo)==true)
-                return "formulariosPrincipal";
-            } 
-        return "ingresarAhora";
-    }
-    /*public String login(String contraseña, String correo) throws JDOMException, IOException {
-        if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
-            if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
-                if(conexionBD.consultarUsuario(contraseña, correo)==true){
-                    return "formulariosPrincipal";
+    public String login(String contraseña, String correo) throws JDOMException, IOException {
+        if (!"".equals(contraseña) && !"".equals(correo)) {
+            if(conexionBD.consultarUsuario(contraseña, correo)==true){
+                if(correo.equals("admin@Setena.com") && conexionBD.consultarUsuario(contraseña, correo)==true){
+                    return "superAdmin";
                 }
+
+
             }
-        } else {
-            if (usuario.getCorreo().equals("usuario@setena.com") && usuario.getContraseña().equals("123")) {
-                return "registrarse";
-            }
+             else
+                return "ingresarAhora";
         }
-        return "index";
-    }//fin metodo*/
-    
+        return "formulariosPrincipal";
+    }
+
     public void modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena){
         conexionBD.modificarUsuario(cedula, nombre, apellido1, apellido2, correo, telefono, contrasena);
     }
