@@ -20,17 +20,22 @@
                     <h:form>  
                         <p:growl id="growl" />
                         <h1>
-                            <font color="blue">
+                            <font face="arial" size="05" color="black">
+                                Para ingresar a los formularios primero debe ingresar 
+                           </font>
+                        </h1>
+                        <h2>
+                            <font color="blue" >
                                 Ingrese ahora 
                             </font>
-                        </h1>
+                        </h2>
                         <h:panelGrid columns="1">
                             <p:outputLabel value="Correo: "/>
                             <p:inputText value="#{usuario.correo}" required="false"/>
                             <br/>
                             <p:outputLabel value="Contraseña: "/>
-                            <p:password value="#{usuario.contraseña}"/>
-                            <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
+                            <p:password value="#{usuario.contrasena}"/>
+                            <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contrasena, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
                         <br/>                                      

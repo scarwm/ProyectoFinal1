@@ -11,6 +11,9 @@
     <h:body>
         <div>
             <ui:composition template="principal.xhtml">
+                <ui:define name="contentI" >
+                  
+                </ui:define>
                 <ui:define name="contentIII" >
                     <h:form>
                         <h2>Puede modificar sus datos</h2>
@@ -40,11 +43,14 @@
                             <p:message for="numero"/>
                             
                             <p:outputLabel for="contrasena" value="Contraseña: "/>
-                            <p:password id="contrasena" value="#{controladorUsuario.usuario.contraseña}"/>
+                            <p:password id="contrasena" value="#{controladorUsuario.usuario.contrasena}"/>
                             <p:message for="contrasena"/>
                             
-                            <p:commandButton ajax="false" value="Modificar"/>
-                            <p:commandButton value="Regresar" ajax="false" action="#{controladorUsuario.modificarUsuario()}" immediate="true"/>
+                            <p:commandButton ajax="false" value="Modificar" action="#{controladorUsuario.modificarUsuario()}"/>
+                            <p:commandButton value="Regresar" ajax="false" action="formulariosPrincipal.xhtml" immediate="true"/>
+                            <p:commandButton value="Cerrar sesión" ajax="false" action="index.xhtml" immediate="true"/>
+                                
+                        
                         </h:panelGrid>
                     </h:form>
                 </ui:define>

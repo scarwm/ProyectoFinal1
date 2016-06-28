@@ -82,7 +82,7 @@ public class UsuarioXML {
         apellido2.addContent(user.getApellido2());
         correo.addContent(user.getCorreo());
         telefono.addContent(user.getTelefono());        
-        contrasena.addContent(user.getContraseña());
+        contrasena.addContent(user.getContrasena());
 
         usuario.setAttribute(cedula);
         usuario.addContent(nombre);
@@ -161,7 +161,7 @@ public class UsuarioXML {
         usuarioEncontrado.getChild("apellido2").setText(user.getApellido2());
         usuarioEncontrado.getChild("correo").setText(user.getCorreo());
         usuarioEncontrado.getChild("telefono").setText(user.getTelefono());
-        usuarioEncontrado.getChild("contrasena").setText(user.getContraseña());
+        usuarioEncontrado.getChild("contrasena").setText(user.getContrasena());
         guardar();
     }
 }

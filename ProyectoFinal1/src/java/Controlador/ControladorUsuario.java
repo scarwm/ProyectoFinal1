@@ -50,19 +50,19 @@ public class ControladorUsuario {
 
     public String agregarUsuario(ActionEvent e) throws JDOMException, IOException {
        
-        conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContraseña());
+        conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
         usuarioXML.addUser(this.usuario);
         return "index";
     }
 
-    /*public String login(String contraseña, String correo) throws JDOMException, IOException {
-        if (!"".equals(contraseña) && !"".equals(correo)) {
-            if(conexionBD.consultarUsuario(contraseña, correo)==true)
+    public String login(String contrasena, String correo) throws JDOMException, IOException {
+        if (!"".equals(contrasena) && !"".equals(correo)) {
+            if(conexionBD.consultarUsuario(contrasena, correo)==true)
                 return "formulariosPrincipal";
             } 
-        return "index";
-    }*/
-    public String login(String contraseña, String correo) throws JDOMException, IOException {
+        return "ingresarAhora";
+    }
+    /*public String login(String contraseña, String correo) throws JDOMException, IOException {
         if (!"".equals(contraseña) && !"".equals(correo) && usuarioXML.verificarUsuario(contraseña, correo) != null) {
             if (contraseña.equals(usuarioXML.verificarUsuario(contraseña, correo).getContraseña()) && correo.equals(usuarioXML.verificarUsuario(contraseña, correo).getCorreo())) {
                 if(conexionBD.consultarUsuario(contraseña, correo)==true){
@@ -75,14 +75,14 @@ public class ControladorUsuario {
             }
         }
         return "index";
-    }//fin metodo
+    }//fin metodo*/
     
     public void modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena){
         conexionBD.modificarUsuario(cedula, nombre, apellido1, apellido2, correo, telefono, contrasena);
     }
 
     public Usuario getInfoUsuario() {
-        this.usuario = usuarioXML.verificarUsuario(usuario.getContraseña(), usuario.getCorreo());
+        this.usuario = usuarioXML.verificarUsuario(usuario.getContrasena(), usuario.getCorreo());
         return usuario;
     }
 
