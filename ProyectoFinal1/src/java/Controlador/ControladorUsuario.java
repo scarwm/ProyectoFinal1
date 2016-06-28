@@ -47,6 +47,7 @@ public class ControladorUsuario {
        
         conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
         usuarioXML.addUser(this.usuario);
+        System.out.println("hoal");
         return "index";
     }
 

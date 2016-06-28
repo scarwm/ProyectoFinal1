@@ -46,6 +46,7 @@ public class ControladorFormulario {
        
         formularioXML.addForm(this.formulario);
         return "index";
+        
     }
     
 }
