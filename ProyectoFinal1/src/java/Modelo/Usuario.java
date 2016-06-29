@@ -79,8 +79,8 @@ public class Usuario{
         return contrasena;
     }
 
-    public void setContrasena(String contraseña) {
-        this.contrasena = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     } 
 
     public String getCedula() {

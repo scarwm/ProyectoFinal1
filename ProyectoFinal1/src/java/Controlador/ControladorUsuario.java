@@ -44,21 +44,19 @@ public class ControladorUsuario {
     }
 
     public String agregarUsuario(ActionEvent e) throws JDOMException, IOException {
-       
         conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
         usuarioXML.addUser(this.usuario);
         System.out.println("hoal");
         return "index";
     }
+         
 
-    public String login(String contraseña, String correo) throws JDOMException, IOException {
-        if (!"".equals(contraseña) && !"".equals(correo)) {
-            if(conexionBD.consultarUsuario(contraseña, correo)==true){
-                if(correo.equals("admin@Setena.com") && conexionBD.consultarUsuario(contraseña, correo)==true){
+    public String login(String contrasena, String correo) throws JDOMException, IOException {
+        if (!"".equals(contrasena) && !"".equals(correo)) {
+            if(conexionBD.consultarUsuario(contrasena, correo)==true){
+                if(correo.equals("admin@Setena.com") && conexionBD.consultarUsuario(contrasena, correo)==true){
                     return "superAdmin";
                 }
-
-
             }
              else
                 return "ingresarAhora";

@@ -91,7 +91,7 @@ public class ConexionBD {
     }
     
 
-    public Boolean consultarUsuario(String contrasena, String correo)
+     public Boolean consultarUsuario(String contrasena, String correo)
     {
         ResultSet rs = null;
         Statement cmd = null;
@@ -118,6 +118,6 @@ public class ConexionBD {
         }
      return false;   
     }
-
     
 }
+
