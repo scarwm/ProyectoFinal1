@@ -64,17 +64,14 @@ public class ControladorUsuario {
         return "formulariosPrincipal";
     }
 
-    public void modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena){
-        conexionBD.modificarUsuario(cedula, nombre, apellido1, apellido2, correo, telefono, contrasena);
+    public void modificarUsuario(ActionEvent e){
+        conexionBD.modificarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
+        usuarioXML.modificarUsuario(this.usuario);
     }
 
     public Usuario getInfoUsuario() {
         this.usuario = usuarioXML.verificarUsuario(usuario.getContrasena(), usuario.getCorreo());
         return usuario;
-    }
-
-    public void modificarUsuario() {
-        usuarioXML.modificarUsuario(this.usuario);
     }
 
     public ArrayList<Usuario> getListaUser() throws ParseException, JDOMException, IOException {
