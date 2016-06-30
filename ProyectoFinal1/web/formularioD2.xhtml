@@ -26,7 +26,7 @@
                             <p:inputText id="identidad" value="#" required="true" requiredMessage="Escriba el numero de identidad"/>
                             <p:message for="identidad"/>
                             </h:panelGrid>
-                            
+                             
                             <h3>Sobre la localizacion geografica del proyecto</h3>
                             
                             <h:panelGrid columns="3">
@@ -38,128 +38,78 @@
                             <p:inputText id="canton" value="#" required="true" requiredMessage="Escriba el canton"/>
                             <p:message for="canton"/>
                             </h:panelGrid>
-                            
-                            <h3>Informacion de la actividad</h3>
-                            <h5>Descripcion del proyecto</h5>
-                            <p:inputTextarea rows="6" cols="33" />
-                            
+                          
+                            <h4>Meedio principalpara recibir notificaciones(obligatorio)</h4>
+                            <p:outputLabel for="correo" value="Correo eletrónico:"/>
+                            <p:inputText id="correo" value="#" required="true" requiredMessage="Escriba el correo electronico"/>
+                            <p:message for="correo"/>
+                           
+                            <h3 style="color: red">Acontinuación seleccione la opcion que su proyecto requiere</h3>
                             <h3>Caracterizacion ambiental basica</h3>
                             
                             <h5>¿Cuenta su proyecto con agua?</h5>
-                            <p:selectManyCheckbox id="basic1">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic1"/>
                             
                             <h5>¿Cuenta su proyecto con Electricidad?</h5>
-                            <p:selectManyCheckbox id="basic2">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic2"/>
                             
                             <h5>¿Existen vías de acceso?</h5>
-                            <p:selectManyCheckbox id="basic3">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic3"/>
                             
                             <h5>Vías de acceso son de:</h5>
-                            <p:selectManyCheckbox id="basic4">
-                                <f:selectItem itemLabel="Cemento" itemValue="Cemento" />
-                                <f:selectItem itemLabel="Lastre" itemValue="Lastre" />
-                                <f:selectItem itemLabel="Otro" itemValue="Otro" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic4"/>
                             
                             <h3>Sobre la ubicación específica del proyecto</h3>
                             
                             <h5>¿El uso de suelo propuesto es conforme con el establecido en el plan regulador vigente?</h5>
-                            <p:selectManyCheckbox id="basic5">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic5"/>
                             
                             <h3>Sobre las regulaciones específicas del proyecto</h3>
                             
                             <h5>¿Existen regulaciones ambientales o sanitarias específicas para su proyecto?</h5>
-                            <p:selectManyCheckbox id="basic6">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                             <h:selectBooleanCheckbox id="basic6"/>
                             
                             <h3>Aspectos ambientales relevantes</h3>
                             
                             <h4>Aspectos: Consumo, Componentes: Agua</h4>
                             
                             <h5>¿Su proyecto se abastecerá con un acueducto?</h5>
-                            <p:selectManyCheckbox id="basic7">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic7"/>
                             
-                            <h5>¿Su proyecto se abastecerá de un pezo?</h5>
-                            <p:selectManyCheckbox id="basic8">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h5>¿Su proyecto se abastecerá de un pozo?</h5>
+                            <h:selectBooleanCheckbox id="basic8"/>
+                                
                            
                             <h4>Aspectos: Consumo, Componentes: Energía</h4>
                             
-                            <h5>¿Necesita para el desarrollo del proyecto enrgía electrica?</h5>
-                            <p:selectManyCheckbox id="basic9">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                            </p:selectManyCheckbox>
+                            <h5>¿Necesita para el desarrollo del proyecto energía electrica?</h5>
+                            <h:selectBooleanCheckbox id="basic9"/>
                             
-                            <h5>¿Utilizará su proyecto fuente propia de enrgía?</h5>
-                            <p:selectManyCheckbox id="basic10">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h5>¿Utilizará su proyecto fuente propia de energía?</h5>
+                            <h:selectBooleanCheckbox id="basic10"/>
                             
-                             <h4>Aspectos: Consumo, Componentes: Cobertura Vegetal</h4>
+                            <h4>Aspectos: Consumo, Componentes: Cobertura Vegetal</h4>
                             
                             <h5>¿Para el desarrollo necesita tala (cortar) árboles?</h5>
-                            <p:selectManyCheckbox id="basic11">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic11"/>
                             
                             <h4>Aspectos: Impacto, Componentes: Agua</h4>
                             
-                            <h5>¿Las aguas plluviales del proyecto serán encauzadas al alcantarillado público?</h5>
-                            <p:selectManyCheckbox id="basic12">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h5>¿Las aguas pluviales del proyecto serán encauzadas al alcantarillado público?</h5>
+                            <h:selectBooleanCheckbox id="basic12"/>
                             
-                            <h5>¿Las aguas plluviales del proyecto serán encauzadas al alcantarillado público?</h5>
-                            <p:selectManyCheckbox id="basic13">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h5>¿Las aguas pluviales del proyecto serán encauzadas a una servidumbre de descarga existente?</h5>
+                            <h:selectBooleanCheckbox id="basic13"/>
                            
                             <h4>Aspectos: Impacto, Componentes: Suelo</h4>
                             
                             <h5>¿El proyecto conpempla movimientos de tierra de hasta 200m³ y relleno con acarreo fuera del  área del proyecto?</h5>
-                            <p:selectManyCheckbox id="basic14">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
+                            <h:selectBooleanCheckbox id="basic14"/>
                             
                             <h5>¿El proyecto conpempla movimientos de tierra de hasta 200m³ y relleno sin movilización fuera del área del proyecto?</h5>
-                            <p:selectManyCheckbox id="basic15">
-                                <f:selectItem itemLabel="Si" itemValue="Si" />
-                                <f:selectItem itemLabel="No" itemValue="No" />
-                                <f:selectItem itemLabel="NA" itemValue="NA" />
-                            </p:selectManyCheckbox>
-                            
-                            
+                            <h:selectBooleanCheckbox id="basic15"/>
+                             <br />
+                             <br />
                             <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorFormulario.agregarFormulario(e)}" />
                                           
                     </h:form>

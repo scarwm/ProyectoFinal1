@@ -19,6 +19,17 @@
                 <ui:define name="contentIII" >
                     <h:form>  
                         <p:growl id="growl" />
+                        
+                        <pre>
+                            <font face="arial">
+Esta parte de la página está destinada para que personas con la disposición de crear un proyecto
+puedan aquí llenar los formularios correspondientes, los formularios pueden ser llenados unicamente
+por personas que cuenten con una cuenta y que posteriormente ingresen su usuario y contraseña.
+
+Si usted tiene un proyecto el cual quiera presentar ante SETENA favor ingresar y llenar los formularios.
+                            </font>
+                        </pre>
+                        
                         <h1>
                             <font color="blue">
                                 Ingrese ahora 
@@ -29,10 +40,15 @@
                             <p:inputText value="#{usuario.correo}" required="false"/>
                             <br/>
                             <p:outputLabel value="Contraseña: "/>
-                            <p:password value="#{usuario.contraseña}"/>
+                            <p:password value="#{usuario.contrasena}"/>
+                            <br/>  
                             <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
+                        <h:outputLink value="registrarse.xhtml">
+                        <h:outputText value="¿No posee una cuenta? Cree una aquí" />
+                        </h:outputLink>
+                        
                         <br/>                                      
                     </h:form>
                 </ui:define>

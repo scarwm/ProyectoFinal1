@@ -52,11 +52,11 @@
                             <p:message for="numero"/>
                             
                             <p:outputLabel for="contrasena" value="Contraseña: "/>
-                            <p:password id="contrasena" value="#{controladorUsuario.usuario.contraseña}" match="contrasenna" feedback="true" required="true" requiredMessage="Escriba la contraseña"/>
+                            <p:password id="contrasena" value="#{controladorUsuario.usuario.contrasena}" match="contrasenna" feedback="true" required="true" requiredMessage="Escriba la contraseña"/>
                             <p:message for="contrasena"/>
                             
                             <p:outputLabel for="contrasenna" value="Confirmar contraseña: "/>
-                            <p:password id="contrasenna" value="#{controladorUsuario.usuario.contraseña}" required="true" requiredMessage="Debe confirmar la contraseña"/>
+                            <p:password id="contrasenna" value="#{controladorUsuario.usuario.contrasena}" required="true" requiredMessage="Debe confirmar la contraseña"/>
                             <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorUsuario.agregarUsuario(e)}" />
                         </h:panelGrid>
                     </h:form>    
