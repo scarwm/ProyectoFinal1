@@ -13,6 +13,11 @@
         <link rel="stylesheet" type="text/css" href="resources/css/default.css"/>
     </h:head>
     <h:body>
+        <div id="top">
+            <ui:insert name="top"> 
+                <div id="firma"></div>
+            </ui:insert>
+        </div>
      
         <div>
             <ui:composition template="principal.xhtml">              
@@ -42,7 +47,7 @@ Si usted tiene un proyecto el cual quiera presentar ante SETENA favor ingresar y
                             <p:outputLabel value="Contraseña: "/>
                             <p:password value="#{usuario.contrasena}"/>
                             <br/>  
-                            <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contraseña, usuario.correo)}"/>
+                            <p:commandButton ajax="false" value="Ingresar" icon="ui-icon-extlink" action="#{controladorUsuario.login(usuario.contrasena, usuario.correo)}"/>
                         </h:panelGrid>
                         <br/>
                         <h:outputLink value="registrarse.xhtml">

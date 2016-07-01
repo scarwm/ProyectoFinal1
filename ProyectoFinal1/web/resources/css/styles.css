@@ -11,6 +11,14 @@ and open the template in the editor.
     
 }
 
+#firma 
+{
+    background: url(../img/sete.png);
+    height: 119px; 
+    width: 968px; 
+    margin: auto; 
+}
+
 .panel_derecho{
     position:relative;
     background-color: white;

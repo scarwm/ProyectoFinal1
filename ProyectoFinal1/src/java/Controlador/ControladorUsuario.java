@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 import org.jdom2.JDOMException;
+import utilidades.Escritor;
 
 
 /**
@@ -27,12 +28,16 @@ public class ControladorUsuario {
     private File archivoXML;
     private UsuarioXML usuarioXML;
     private ConexionBD conexionBD;
+    private Escritor escritor;
+    String ruta;
             
     public ControladorUsuario() throws IOException {
+        //this.ruta = "C:\Users\Carolina\Documents\NetBeansProjects";
         
         archivoXML = new File("Usuario.xml");
         usuarioXML = new UsuarioXML(archivoXML);
         conexionBD= new ConexionBD();
+        escritor = new Escritor();
     }
     
     public Usuario getUsuario() {
@@ -44,21 +49,20 @@ public class ControladorUsuario {
     }
 
     public String agregarUsuario(ActionEvent e) throws JDOMException, IOException {
-       
         conexionBD.registrarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
         usuarioXML.addUser(this.usuario);
+       // escritor.with_obj_in_file_xml(ruta,this.usuario);
         System.out.println("hoal");
         return "index";
     }
+         
 
-    public String login(String contraseña, String correo) throws JDOMException, IOException {
-        if (!"".equals(contraseña) && !"".equals(correo)) {
-            if(conexionBD.consultarUsuario(contraseña, correo)==true){
-                if(correo.equals("admin@Setena.com") && conexionBD.consultarUsuario(contraseña, correo)==true){
+    public String login(String contrasena, String correo) throws JDOMException, IOException {
+        if (!"".equals(contrasena) && !"".equals(correo)) {
+            if(conexionBD.consultarUsuario(contrasena, correo)==true){
+                if(correo.equals("admin@Setena.com") && conexionBD.consultarUsuario(contrasena, correo)==true){
                     return "superAdmin";
                 }
-
-
             }
              else
                 return "ingresarAhora";
@@ -66,17 +70,14 @@ public class ControladorUsuario {
         return "formulariosPrincipal";
     }
 
-    public void modificarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena){
-        conexionBD.modificarUsuario(cedula, nombre, apellido1, apellido2, correo, telefono, contrasena);
+    public void modificarUsuario(ActionEvent e){
+        conexionBD.modificarUsuario(usuario.getCedula(), usuario.getNombre(), usuario.getApellido1(), usuario.getApellido2(), usuario.getCorreo(), usuario.getTelefono(), usuario.getContrasena());
+        usuarioXML.modificarUsuario(this.usuario);
     }
 
     public Usuario getInfoUsuario() {
         this.usuario = usuarioXML.verificarUsuario(usuario.getContrasena(), usuario.getCorreo());
         return usuario;
-    }
-
-    public void modificarUsuario() {
-        usuarioXML.modificarUsuario(this.usuario);
     }
 
     public ArrayList<Usuario> getListaUser() throws ParseException, JDOMException, IOException {

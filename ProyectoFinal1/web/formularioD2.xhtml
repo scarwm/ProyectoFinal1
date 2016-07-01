@@ -13,17 +13,22 @@
         <link rel="stylesheet" type="text/css" href="resources/css/default.css"/>
     </h:head>
     <h:body>
+        <div id="top">
+            <ui:insert name="top"> 
+                <div id="firma"></div>
+            </ui:insert>
+        </div>
          <div>
             <ui:composition template="principal.xhtml">              
                 <ui:define name="contentIII" >
                     <h:form> 
                             <h:panelGrid columns="3">
                             <p:outputLabel for="nombre" value="Nombre del proyecto"/>
-                            <p:inputText id="nombre" value="#" required="true" requiredMessage="Escriba el nombre"/>
+                            <p:inputText id="nombre"  required="true" requiredMessage="Escriba el nombre"/>
                             <p:message for="nombre"/>
                             
                             <p:outputLabel for="identidad" value="Identidad del propietario:"/>
-                            <p:inputText id="identidad" value="#" required="true" requiredMessage="Escriba el numero de identidad"/>
+                            <p:inputText id="identidad"  required="true" requiredMessage="Escriba el numero de identidad"/>
                             <p:message for="identidad"/>
                             </h:panelGrid>
                              
@@ -31,86 +36,82 @@
                             
                             <h:panelGrid columns="3">
                             <p:outputLabel for="provincia" value="Provinvia:"/>
-                            <p:inputText id="provincia" value="#" required="true" requiredMessage="Escriba la provincia"/>
+                            <p:inputText id="provincia"  required="true" requiredMessage="Escriba la provincia"/>
                             <p:message for="provincia"/>
                             
                             <p:outputLabel for="canton" value="Canton:"/>
-                            <p:inputText id="canton" value="#" required="true" requiredMessage="Escriba el canton"/>
+                            <p:inputText id="canton"  required="true" requiredMessage="Escriba el canton"/>
                             <p:message for="canton"/>
                             </h:panelGrid>
                           
-                            <h4>Meedio principalpara recibir notificaciones(obligatorio)</h4>
+                            <h4>Medio principalpara recibir notificaciones(obligatorio)</h4>
                             <p:outputLabel for="correo" value="Correo eletrónico:"/>
-                            <p:inputText id="correo" value="#" required="true" requiredMessage="Escriba el correo electronico"/>
+                            <p:inputText id="correo"  required="true" requiredMessage="Escriba el correo electronico"/>
                             <p:message for="correo"/>
                            
                             <h3 style="color: red">Acontinuación seleccione la opcion que su proyecto requiere</h3>
                             <h3>Caracterizacion ambiental basica</h3>
-                            
+                
                             <h5>¿Cuenta su proyecto con agua?</h5>
-                            <h:selectBooleanCheckbox id="basic1"/>
+                            <h:selectBooleanCheckbox  id="basic1" />
                             
                             <h5>¿Cuenta su proyecto con Electricidad?</h5>
-                            <h:selectBooleanCheckbox id="basic2"/>
+                            <h:selectBooleanCheckbox id="basic2" />
                             
                             <h5>¿Existen vías de acceso?</h5>
-                            <h:selectBooleanCheckbox id="basic3"/>
-                            
-                            <h5>Vías de acceso son de:</h5>
-                            <h:selectBooleanCheckbox id="basic4"/>
+                            <h:selectBooleanCheckbox id="basic3" />
                             
                             <h3>Sobre la ubicación específica del proyecto</h3>
                             
                             <h5>¿El uso de suelo propuesto es conforme con el establecido en el plan regulador vigente?</h5>
-                            <h:selectBooleanCheckbox id="basic5"/>
+                            <h:selectBooleanCheckbox id="basic5" />
                             
                             <h3>Sobre las regulaciones específicas del proyecto</h3>
                             
                             <h5>¿Existen regulaciones ambientales o sanitarias específicas para su proyecto?</h5>
-                             <h:selectBooleanCheckbox id="basic6"/>
+                            <h:selectBooleanCheckbox id="basic6"/>
                             
                             <h3>Aspectos ambientales relevantes</h3>
                             
                             <h4>Aspectos: Consumo, Componentes: Agua</h4>
                             
                             <h5>¿Su proyecto se abastecerá con un acueducto?</h5>
-                            <h:selectBooleanCheckbox id="basic7"/>
+                            <h:selectBooleanCheckbox id="basic7" />
                             
                             <h5>¿Su proyecto se abastecerá de un pozo?</h5>
-                            <h:selectBooleanCheckbox id="basic8"/>
-                                
+                            <h:selectBooleanCheckbox id="basic8" />
                            
                             <h4>Aspectos: Consumo, Componentes: Energía</h4>
                             
                             <h5>¿Necesita para el desarrollo del proyecto energía electrica?</h5>
-                            <h:selectBooleanCheckbox id="basic9"/>
+                            <h:selectBooleanCheckbox id="basic9"  />
                             
                             <h5>¿Utilizará su proyecto fuente propia de energía?</h5>
-                            <h:selectBooleanCheckbox id="basic10"/>
+                            <h:selectBooleanCheckbox id="basic10" />
                             
                             <h4>Aspectos: Consumo, Componentes: Cobertura Vegetal</h4>
                             
                             <h5>¿Para el desarrollo necesita tala (cortar) árboles?</h5>
-                            <h:selectBooleanCheckbox id="basic11"/>
+                            <h:selectBooleanCheckbox id="basic11" />
                             
                             <h4>Aspectos: Impacto, Componentes: Agua</h4>
                             
                             <h5>¿Las aguas pluviales del proyecto serán encauzadas al alcantarillado público?</h5>
-                            <h:selectBooleanCheckbox id="basic12"/>
+                            <h:selectBooleanCheckbox id="basic12" />
                             
                             <h5>¿Las aguas pluviales del proyecto serán encauzadas a una servidumbre de descarga existente?</h5>
-                            <h:selectBooleanCheckbox id="basic13"/>
+                            <h:selectBooleanCheckbox id="basic13" />
                            
                             <h4>Aspectos: Impacto, Componentes: Suelo</h4>
                             
                             <h5>¿El proyecto conpempla movimientos de tierra de hasta 200m³ y relleno con acarreo fuera del  área del proyecto?</h5>
-                            <h:selectBooleanCheckbox id="basic14"/>
+                            <h:selectBooleanCheckbox id="basic14" />
                             
                             <h5>¿El proyecto conpempla movimientos de tierra de hasta 200m³ y relleno sin movilización fuera del área del proyecto?</h5>
                             <h:selectBooleanCheckbox id="basic15"/>
                              <br />
                              <br />
-                            <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink" action="#{controladorFormulario.agregarFormulario(e)}" />
+                            <p:commandButton ajax="false" value="Guardar" icon="ui-icon-extlink"  />
                                           
                     </h:form>
                 </ui:define>
