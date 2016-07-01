@@ -22,31 +22,33 @@ import org.jdom2.JDOMException;
 @ManagedBean
 @RequestScoped
 public class ControladorFormulario {
+
     @ManagedProperty(value = "#{formulario}")
-    
+
     public Formulario formulario;
     private File archivoXML;
     private FormularioXML formularioXML;
+    private BDFormularioD1 bDFormularioD1;
 
     public ControladorFormulario() throws IOException {
         archivoXML = new File("Formulario.xml");
         formularioXML = new FormularioXML(archivoXML);
-        
+        bDFormularioD1=new BDFormularioD1();
     }
-    
-     public Formulario getFormulario() {
+
+    public Formulario getFormulario() {
         return formulario;
     }
 
     public void setFormulario(Formulario formulario) {
         this.formulario = formulario;
     }
-    
+
+   
     public String agregarFormulario(ActionEvent e) throws JDOMException, IOException {
-       
+        bDFormularioD1.registrarFormulario(formulario.getNumeroDeFormulario(),formulario.getNombreDeLaActividad(),formulario.getNombreORazonSocial(),formulario.getDocumentoDeIdentidad(),formulario.getDireccionExacta(),formulario.getNumTelObra(),formulario.getCorreoElectronicoObra(),formulario.getFaxObra(),formulario.getCodigoPostalObra(),formulario.getProvincia(),formulario.getCanton(),formulario.getDistrito(),formulario.getNombreRL(),formulario.getEstadoCivilRL(),formulario.getOficioRL());
         formularioXML.addForm(this.formulario);
-        return "index";
-        
+        return "reporte";
     }
-    
+
 }

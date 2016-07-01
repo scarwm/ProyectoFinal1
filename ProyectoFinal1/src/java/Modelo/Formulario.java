@@ -9,7 +9,6 @@ import java.io.Serializable;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-
 /**
  *
  * @author Carolina
@@ -17,127 +16,123 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 @ApplicationScoped
 public class Formulario {
+
+    private int numeroDeFormulario;
+    private String nombreDeLaActividad;
+    private String nombreORazonSocial;
+    private String documentoDeIdentidad;
+    private String direccionExacta;
+    private String numTelObra;
+    private String correoElectronicoObra;
+    private String faxObra;
+    private String codigoPostalObra;
+    private String provincia;
+    private String canton;
+    private String distrito;
+    private String nombreRL;
+    private String estadoCivilRL;
+    private String oficioRL;
+   
     
-    private String nombreActivi, razon, identificacion, domicilio, otrasSenas, telefono, correo, fax, codigoPostal, 
- correoAlternativo,provincia,canton, distrito, repreLegal,apellidoRepre, estadoCivil, profesion, numIdentidad, 
- telefonoRepreLegal, faxRepreLegal, codigoPostalRepreLegal, correoRepreLegal, ciiu, iap, consultor,
- correoConsultor, numSetena, numTelefono,vigencia,resolucion;    
     
+    
+
+    /**
+     * Creates a new instance of Formulario
+     */
     public Formulario() {
+    }
+
+    public Formulario(int numeroDeFormulario, String nombre, String nombreORazonSocial, String documentoDeIdentidad, String direccionExacta, String numTelObra, String correoElectronicoObra, String faxObra,String codigoPostalObra,String provincia,String canton, String distrito, String nombreRL,String estadoCilvilRL,String oficioRL) {
+        this.numeroDeFormulario=numeroDeFormulario;
+        this.nombreDeLaActividad = nombre;
+        this.nombreORazonSocial = nombreORazonSocial;
+        this.documentoDeIdentidad = documentoDeIdentidad;
+        this.direccionExacta = direccionExacta;
+        this.numTelObra = numTelObra;
+        this.correoElectronicoObra = correoElectronicoObra;
+        this.faxObra=faxObra;
+        this.codigoPostalObra=codigoPostalObra;
+        this.provincia=provincia;
+        this.canton=canton;
+        this.distrito=distrito;
+        this.nombreRL=nombreRL;
+        this.estadoCivilRL=estadoCilvilRL;
+        this.oficioRL=oficioRL;
+    }
+
+    public int getNumeroDeFormulario() {
+        return numeroDeFormulario;
+    }
+
+    public void setNumeroDeFormulario(int numeroDeFormulario) {
+        this.numeroDeFormulario = numeroDeFormulario;
+    }
+
     
-    }   
-
-    public Formulario(String nombreActivi, String razon, String identificacion, String domicilio, String otrasSenas, String telefono, String correo, String fax, String codigoPostal, String correoAlternativo, String provincia, String canton, String distrito, String repreLegal, String apellidoRepre, String estadoCivil, String profesion, String numIdentidad, String telefonoRepreLegal, String faxRepreLegal, String codigoPostalRepreLegal, String correoRepreLegal, String ciiu, String iap, String consultor, String correoConsultor, String numSetena, String numTelefono, String vigencia, String resolucion) {
-        this.nombreActivi = nombreActivi;
-        this.razon = razon;
-        this.identificacion = identificacion;
-        this.domicilio = domicilio;
-        this.otrasSenas = otrasSenas;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.fax = fax;
-        this.codigoPostal = codigoPostal;
-        this.correoAlternativo = correoAlternativo;
-        this.provincia = provincia;
-        this.canton = canton;
-        this.distrito = distrito;
-        this.repreLegal = repreLegal;
-        this.apellidoRepre = apellidoRepre;
-        this.estadoCivil = estadoCivil;
-        this.profesion = profesion;
-        this.numIdentidad = numIdentidad;
-        this.telefonoRepreLegal = telefonoRepreLegal;
-        this.faxRepreLegal = faxRepreLegal;
-        this.codigoPostalRepreLegal = codigoPostalRepreLegal;
-        this.correoRepreLegal = correoRepreLegal;
-        this.ciiu = ciiu;
-        this.iap = iap;
-        this.consultor = consultor;
-        this.correoConsultor = correoConsultor;
-        this.numSetena = numSetena;
-        this.numTelefono = numTelefono;
-        this.vigencia = vigencia;
-        this.resolucion = resolucion;
+    
+    public String getNombreDeLaActividad() {
+        return nombreDeLaActividad;
     }
 
-    public String getNombreActivi() {
-        return nombreActivi;
+    public void setNombreDeLaActividad(String nombreDeLaActividad) {
+        this.nombreDeLaActividad = nombreDeLaActividad;
     }
 
-    public void setNombreActivi(String nombreActivi) {
-        this.nombreActivi = nombreActivi;
+    public String getNombreORazonSocial() {
+        return nombreORazonSocial;
     }
 
-    public String getRazon() {
-        return razon;
+    public void setNombreORazonSocial(String nombreORazonSocial) {
+        this.nombreORazonSocial = nombreORazonSocial;
     }
 
-    public void setRazon(String razon) {
-        this.razon = razon;
+    public String getDocumentoDeIdentidad() {
+        return documentoDeIdentidad;
     }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public void setDocumentoDeIdentidad(String documentoDeIdentidad) {
+        this.documentoDeIdentidad = documentoDeIdentidad;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public String getDireccionExacta() {
+        return direccionExacta;
     }
 
-    public String getDomicilio() {
-        return domicilio;
+    public void setDireccionExacta(String direccionExacta) {
+        this.direccionExacta = direccionExacta;
     }
 
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
+    public String getNumTelObra() {
+        return numTelObra;
     }
 
-    public String getOtrasSenas() {
-        return otrasSenas;
+    public void setNumTelObra(String numTelObra) {
+        this.numTelObra = numTelObra;
     }
 
-    public void setOtrasSenas(String otrasSenas) {
-        this.otrasSenas = otrasSenas;
+    public String getCorreoElectronicoObra() {
+        return correoElectronicoObra;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public void setCorreoElectronicoObra(String correoElectronico1) {
+        this.correoElectronicoObra = correoElectronico1;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public String getFaxObra() {
+        return faxObra;
     }
 
-    public String getCorreo() {
-        return correo;
+    public void setFaxObra(String faxObra) {
+        this.faxObra = faxObra;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public String getCodigoPostalObra() {
+        return codigoPostalObra;
     }
 
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-
-    public String getCodigoPostal() {
-        return codigoPostal;
-    }
-
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigoPostal = codigoPostal;
-    }
-
-    public String getCorreoAlternativo() {
-        return correoAlternativo;
-    }
-
-    public void setCorreoAlternativo(String correoAlternativo) {
-        this.correoAlternativo = correoAlternativo;
+    public void setCodigoPostalObra(String codigoPostalObra) {
+        this.codigoPostalObra = codigoPostalObra;
     }
 
     public String getProvincia() {
@@ -164,145 +159,31 @@ public class Formulario {
         this.distrito = distrito;
     }
 
-    public String getRepreLegal() {
-        return repreLegal;
+    public String getNombreRL() {
+        return nombreRL;
     }
 
-    public void setRepreLegal(String repreLegal) {
-        this.repreLegal = repreLegal;
+    public void setNombreRL(String nombreRL) {
+        this.nombreRL = nombreRL;
     }
 
-    public String getApellidoRepre() {
-        return apellidoRepre;
+    public String getEstadoCivilRL() {
+        return estadoCivilRL;
     }
 
-    public void setApellidoRepre(String apellidoRepre) {
-        this.apellidoRepre = apellidoRepre;
+    public void setEstadoCivilRL(String estadoCivilRL) {
+        this.estadoCivilRL = estadoCivilRL;
     }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
+    public String getOficioRL() {
+        return oficioRL;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
-
-    public String getProfesion() {
-        return profesion;
-    }
-
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
-    }
-
-    public String getNumIdentidad() {
-        return numIdentidad;
-    }
-
-    public void setNumIdentidad(String numIdentidad) {
-        this.numIdentidad = numIdentidad;
-    }
-
-    public String getTelefonoRepreLegal() {
-        return telefonoRepreLegal;
-    }
-
-    public void setTelefonoRepreLegal(String telefonoRepreLegal) {
-        this.telefonoRepreLegal = telefonoRepreLegal;
-    }
-
-    public String getFaxRepreLegal() {
-        return faxRepreLegal;
-    }
-
-    public void setFaxRepreLegal(String faxRepreLegal) {
-        this.faxRepreLegal = faxRepreLegal;
-    }
-
-    public String getCodigoPostalRepreLegal() {
-        return codigoPostalRepreLegal;
-    }
-
-    public void setCodigoPostalRepreLegal(String codigoPostalRepreLegal) {
-        this.codigoPostalRepreLegal = codigoPostalRepreLegal;
-    }
-
-    public String getCorreoRepreLegal() {
-        return correoRepreLegal;
-    }
-
-    public void setCorreoRepreLegal(String correoRepreLegal) {
-        this.correoRepreLegal = correoRepreLegal;
-    }
-
-    public String getCiiu() {
-        return ciiu;
-    }
-
-    public void setCiiu(String ciiu) {
-        this.ciiu = ciiu;
-    }
-
-    public String getIap() {
-        return iap;
-    }
-
-    public void setIap(String iap) {
-        this.iap = iap;
-    }
-
-    public String getConsultor() {
-        return consultor;
-    }
-
-    public void setConsultor(String consultor) {
-        this.consultor = consultor;
-    }
-
-    public String getCorreoConsultor() {
-        return correoConsultor;
-    }
-
-    public void setCorreoConsultor(String correoConsultor) {
-        this.correoConsultor = correoConsultor;
-    }
-
-    public String getNumSetena() {
-        return numSetena;
-    }
-
-    public void setNumSetena(String numSetena) {
-        this.numSetena = numSetena;
-    }
-
-    public String getNumTelefono() {
-        return numTelefono;
-    }
-
-    public void setNumTelefono(String numTelefono) {
-        this.numTelefono = numTelefono;
-    }
-
-    public String getVigencia() {
-        return vigencia;
-    }
-
-    public void setVigencia(String vigencia) {
-        this.vigencia = vigencia;
-    }
-
-    public String getResolucion() {
-        return resolucion;
-    }
-
-    public void setResolucion(String resolucion) {
-        this.resolucion = resolucion;
+    public void setOficioRL(String oficioRL) {
+        this.oficioRL = oficioRL;
     }
     
     
-    
+   
+
 }
-
-
-
