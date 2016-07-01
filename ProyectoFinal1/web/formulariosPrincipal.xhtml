@@ -24,7 +24,13 @@
                     <p:menuitem value="Mi cuenta" url="http://localhost:8080/ProyectoFinal1/faces/miCuenta.xhtml">
                         <f:param name="i" value="6" />
                     </p:menuitem>
+                    
+                    <p:menuitem value="Cargar archivos" url="http://localhost:8080/ProyectoFinal1/faces/cargarArchivos.xhtml">
+                        <f:param name="i" value="6" />
+                    </p:menuitem>
+                            
                     </p:tabMenu>
+                    
                 </h:form>
                 </ui:define>
                 <ui:define name="contentIII" >
@@ -35,7 +41,7 @@
                         <p:commandLink value="Formulario D1" style="font-size: 15px; color: blue;" action="formularioD1"  />
                        <br/>
                        <br/>
-                       <p:commandLink value="Formulario D2" style="font-size: 15px; color: blue;"  />
+                       <p:commandLink value="Formulario D2" style="font-size: 15px; color: blue;" action ="formularioD2"  />
                     </h:form>
                 </ui:define>
             </ui:composition>

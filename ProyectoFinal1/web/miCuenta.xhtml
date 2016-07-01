@@ -51,12 +51,7 @@
                             <p:commandButton value="Cerrar sesión" ajax="false" action="index.xhtml" immediate="true"/>
                                                   
                         </h:panelGrid>
-                                                  
-                        <h:form>
-                            <p:fileUpload fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" dragDropSupport="false"
-                                   update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpg|png|pdf|docx|doc|txt)$/" />
-                            <p:growl id="messages" showDetail="true" />
-                        </h:form>  
+                                                    
                     </h:form>
                 </ui:define>
             </ui:composition>
