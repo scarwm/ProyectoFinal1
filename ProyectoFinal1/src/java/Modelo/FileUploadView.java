@@ -12,6 +12,8 @@ import java.sql.Statement;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import static javax.swing.DropMode.INSERT;
+import static org.omg.CORBA.AnySeqHelper.insert;
  
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
@@ -71,7 +73,7 @@ public class FileUploadView {
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("INSERT INTO archivos(archivos) VALUES ("+archivo+")");
+                ejecuto = cmd.execute(insert into archivos("(SELECT* FROM archivos(BULK N"+archivo+",SINGLE_BLOB)as Pdf)");
                 
                return true;
                // rs.close();
