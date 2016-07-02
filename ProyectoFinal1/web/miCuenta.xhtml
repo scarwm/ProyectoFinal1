@@ -31,7 +31,7 @@
                             <p:message for="apellido2"/>
                             
                             <p:outputLabel for="cedula" value="Cedula"/>
-                            <p:inputMask id="cedula" value="#{controladorUsuario.usuario.cedula}" mask="9-9999-9999"/>
+                            <p:inputText id="cedula" value="#{controladorUsuario.usuario.cedula}"/>
                             <p:message for="cedula"/>
                             
                             <p:outputLabel for="correo" value="Correo"/>
@@ -46,10 +46,9 @@
                             <p:password id="contrasena" value="#{controladorUsuario.usuario.contrasena}"/>
                             <p:message for="contrasena"/>
                             
-                            <p:commandButton value="Modificar" ajax="false"  action="#{controladorUsuario.modificarUsuario()}"/>
+                            <p:commandButton value="Modificar" ajax="false"  action="#{controladorUsuario.modificarUsuario(e)}"/>
                             <p:commandButton value="Regresar" ajax="false" action="formulariosPrincipal.xhtml" immediate="true"/>
-                            <p:commandButton value="Cerrar sesión" ajax="false" action="index.xhtml" immediate="true"/>
-                                                  
+                                                                               
                         </h:panelGrid>
                                                     
                     </h:form>

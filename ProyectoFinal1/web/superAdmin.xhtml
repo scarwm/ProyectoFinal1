@@ -25,6 +25,24 @@
                             </font>
                         </h1>
                         
+                            <p:dataTable id="data" value="#{controlR.listReport}" var="informacion">
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{informacion.nombre}"/>
+                            </p:column>
+                            <p:column headerText="Cedula">
+                                <h:outputText value="#{informacion.cedula}"/>
+                            </p:column>
+                            <p:column headerText="fecha">
+                                <h:outputText value="#{informacion.fecha}"/>
+                            </p:column>
+                            <p:column headerText="Tipo De Formulario">
+                                <h:outputText value="#{informacion.tipoDeFor}"/>
+                            </p:column>
+                            <p:column headerText="Estado de la solicitud">
+                                <h:outputText value="#{informacion.estadoDeLaSolicitud}"/>
+                            </p:column>
+                             </p:dataTable>
+                        
                         <br/>
                         <br/>                                      
                     </h:form>

@@ -61,7 +61,7 @@ public class ConexionBD {
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("UPDATE `usuario` SET cedula='"+cedula+"',nombre='"+nombre+"',apellido1='"+apellido1+"' ,apellido2='"+apellido2+"' ,correo='"+correo+"' ,telefono='"+telefono+"' ,contrasena='"+contrasena+"' WHERE cedula='"+cedula+"'"); 
+                ejecuto = cmd.execute("UPDATE usuario SET cedula='"+cedula+"',nombre='"+nombre+"',apellido1='"+apellido1+"' ,apellido2='"+apellido2+"' ,correo='"+correo+"' ,telefono='"+telefono+"' ,contrasena='"+contrasena+"' WHERE cedula='"+cedula+"'"); 
                return true;
                // rs.close();
         }
