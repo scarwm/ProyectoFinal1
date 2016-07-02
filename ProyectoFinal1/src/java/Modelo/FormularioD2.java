@@ -15,10 +15,13 @@ private String nombre, identidad, provincia, canton,correo, cuentaConAgua, cuent
 usoDeSuelo,acueducto, pozo, necesitaEnergiaElectrica, fuenteEnergiaElectrica, talaDeArboles,
 aguasPluvialesAlcantarillado, AguasPluvialesServidumbre, movimientosDeTierraAcarreo, movimientosDeTierraMovilizacion;
 
+private int numeroDeFormulario;
+
     public FormularioD2() {
     }
 
     public FormularioD2(String nombre, String identidad, String provincia, String canton, String correo, String cuentaConAgua, String cuentaConElectricidad, String viasDeAcceso, String usoDeSuelo, String acueducto, String pozo, String necesitaEnergiaElectrica, String fuenteEnergiaElectrica, String talaDeArboles, String aguasPluvialesAlcantarillado, String AguasPluvialesServidumbre, String movimientosDeTierraAcarreo, String movimientosDeTierraMovilizacion) {
+        this.numeroDeFormulario=2;
         this.nombre = nombre;
         this.identidad = identidad;
         this.provincia = provincia;
@@ -39,6 +42,14 @@ aguasPluvialesAlcantarillado, AguasPluvialesServidumbre, movimientosDeTierraAcar
         this.movimientosDeTierraMovilizacion = movimientosDeTierraMovilizacion;
     }
 
+    public int getNumeroDeFormulario() {
+        return numeroDeFormulario;
+    }
+
+    public void setNumeroDeFormulario(int numeroDeFormulario) {
+        this.numeroDeFormulario = numeroDeFormulario;
+    }
+    
     public String getCorreo() {
         return correo;
     }

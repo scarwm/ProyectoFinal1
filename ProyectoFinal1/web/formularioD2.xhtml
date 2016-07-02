@@ -22,7 +22,13 @@
             <ui:composition template="principal.xhtml">              
                 <ui:define name="contentIII" >
                     <h:form> 
+                        <p:outputLabel for="numeroDeFormulario" value="Numero de formulario: "/>
+                        <p:inputText id="numeroDeFormulario" value="" disabled="true"/>
+                                <p:message for="numeroDeFormulario"/>
+                        
                             <h:panelGrid columns="3">
+                                
+                                
                             <p:outputLabel for="nombre" value="Nombre del proyecto"/>
                             <p:inputText id="nombre"  required="true" requiredMessage="Escriba el nombre"/>
                             <p:message for="nombre"/>

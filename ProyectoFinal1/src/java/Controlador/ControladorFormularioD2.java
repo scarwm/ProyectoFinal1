@@ -31,7 +31,6 @@ public class ControladorFormularioD2 {
     private ConexionBD conexionBD;
    
     public ControladorFormularioD2() throws IOException {
-        System.out.print("xxxxxxxxxxxx");
         archivoXML = new File("FormularioD2.xml");
         formularioD2XML = new FormularioD2XML(archivoXML);
         conexionBD= new ConexionBD();
@@ -52,14 +51,12 @@ public class ControladorFormularioD2 {
 
     
     public String agregarUsuario(ActionEvent e) throws JDOMException, IOException {
-        conexionBD.registrarFormularioD2(formulario.getNombre(), formulario.getIdentidad(), formulario.getProvincia(), 
+        conexionBD.registrarFormularioD2(formulario.getNumeroDeFormulario() ,formulario.getNombre(), formulario.getIdentidad(), formulario.getProvincia(), 
                 formulario.getCanton(), formulario.getCorreo(), formulario.getCuentaConAgua(), formulario.getCuentaConElectricidad(),
                  formulario.getViasDeAcceso(), formulario.getUsoDeSuelo(), formulario.getAcueducto(), formulario.getPozo(), formulario.getNecesitaEnergiaElectrica(),
                  formulario.getFuenteEnergiaElectrica(), formulario.getTalaDeArboles(), formulario.getAguasPluvialesAlcantarillado(),
                  formulario.getAguasPluvialesServidumbre(), formulario.getMovimientosDeTierraAcarreo(), formulario.getMovimientosDeTierraMovilizacion());
         formularioD2XML.addUser(this.formulario);
-       // escritor.with_obj_in_file_xml(ruta,this.usuario);
-        System.out.println("hola");
         return "index";
     }
     

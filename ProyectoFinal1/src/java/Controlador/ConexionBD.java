@@ -35,7 +35,7 @@ public class ConexionBD {
             e.printStackTrace();
         } 
     }
-    public boolean registrarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
+    public boolean registrarUsuario(int contador, String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
@@ -123,7 +123,7 @@ public class ConexionBD {
 //aguasPluvialesAlcantarillado, AguasPluvialesServidumbre, movimientosDeTierraAcarreo, movimientosDeTierraMovilizacion;
 
      
-    public boolean registrarFormularioD2(String nombre, String identidad, String provincia, String canton, 
+    public boolean registrarFormularioD2(int contador, String nombre, String identidad, String provincia, String canton, 
             String correo, String cuentaConAgua, String cuentaConElectricidad, String viasDeAcceso, String usoDeSuelo, 
             String acueducto, String pozo, String necesitaEnergiaElectrica, String fuenteEnergiaElectrica, String talaDeArboles, 
             String aguasPluvialesAlcantarillado, String AguasPluvialesServidumbre, String movimientosDeTierraAcarreo, 
@@ -134,8 +134,8 @@ public class ConexionBD {
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("INSERT INTO formularioD2(nombre,identidad,provincia,canton,correo,cuentaConAgua,cuentaConElectricidad,viasDeAcceso,usoDeSuelo,String acueducto, String pozo, String necesitaEnergiaElectrica, String fuenteEnergiaElectrica, String talaDeArboles,aguasPluvialesAlcantarillado,AguasPluvialesServidumbre,movimientosDeTierraAcarreo, \n" +
-"            movimientosDeTierraMovilizacion) VALUES ("+nombre+",'"+identidad+"','"+provincia+"','"+canton+"','"+correo+"','"+cuentaConAgua+"','"+cuentaConElectricidad+"','"+viasDeAcceso+"','"+usoDeSuelo+"','"+acueducto+"','"+pozo+"','"
+                ejecuto = cmd.execute("INSERT INTO d2(numeroDeFormulario,nombre,identidad,provincia,canton,correo,cuentaConAgua,cuentaConElectricidad,viasDeAcceso,usoDeSuelo,String acueducto, String pozo, String necesitaEnergiaElectrica, String fuenteEnergiaElectrica, String talaDeArboles,aguasPluvialesAlcantarillado,AguasPluvialesServidumbre,movimientosDeTierraAcarreo, \n" +
+"            movimientosDeTierraMovilizacion) VALUES ("+contador+", "+nombre+",'"+identidad+"','"+provincia+"','"+canton+"','"+correo+"','"+cuentaConAgua+"','"+cuentaConElectricidad+"','"+viasDeAcceso+"','"+usoDeSuelo+"','"+acueducto+"','"+pozo+"','"
                         + "','"+necesitaEnergiaElectrica+"','"+fuenteEnergiaElectrica+"','"+talaDeArboles+"','"+aguasPluvialesAlcantarillado+"'"
                         + ",'"+AguasPluvialesServidumbre+"','"+movimientosDeTierraAcarreo+"','"+movimientosDeTierraMovilizacion+"')");
                 

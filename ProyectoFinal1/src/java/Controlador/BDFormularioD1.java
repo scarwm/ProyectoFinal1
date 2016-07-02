@@ -45,7 +45,7 @@ public class BDFormularioD1 {
         boolean ejecuto;
         try {
             cmd = con.createStatement();
-            ejecuto = cmd.execute("INSERT INTO formulariod1(numeroDeFormulario,nombreDeLaActividad,nombreORazonSocial,documentoDeIdentidad,direccionExacta,numTelObra,correoElectronicoObra,faxObra,codigoPostalObra,provincia,canton,distrito,nombreRL,estadoCivilRL,oficioRL) VALUES ('"+ numeroDeFormulario+"','"+nombreDeLaActividad+"','"+nombreORazonSocial+"','"+documentoDeIdentidad+"','"+direccionExacta+"','"+numTelObra+"','"+correoElectronicoObra+"','"+faxObra+"','"+codigoPostalObra+"','"+provincia+"','"+canton+"','"+distrito+"','"+nombreRL+"','"+estadoCivilRL+"','"+oficioRL+"')");
+            ejecuto = cmd.execute("INSERT INTO formulariod1(numeroDeFormulario,nombreDeLaActividad,nombreORazonSocial,documentoDeIdentidad,direccionExacta,numTelObra,correoElectronicoObra,faxObra,codigoPostalObra,provincia,canton,distrito,nombreRL,estadoCivilRL,oficioRL) VALUES ("+ numeroDeFormulario+",'"+nombreDeLaActividad+"','"+nombreORazonSocial+"','"+documentoDeIdentidad+"','"+direccionExacta+"','"+numTelObra+"','"+correoElectronicoObra+"','"+faxObra+"','"+codigoPostalObra+"','"+provincia+"','"+canton+"','"+distrito+"','"+nombreRL+"','"+estadoCivilRL+"','"+oficioRL+"')");
             System.out.println("Insert into");
 
             return true;
