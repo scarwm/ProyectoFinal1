@@ -2,17 +2,24 @@
 package Controlador;
 
 
+import Modelo.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 
-
+@ManagedBean
+@RequestScoped
 public class ConexionBD {
+    Usuario usuario= new Usuario();
     
     Connection con = null;
     public ConexionBD()
@@ -35,7 +42,7 @@ public class ConexionBD {
             e.printStackTrace();
         } 
     }
-    public boolean registrarUsuario(int contador, String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
+    public boolean registrarUsuario(String cedula, String nombre, String apellido1, String apellido2, String correo, String telefono, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
@@ -45,7 +52,7 @@ public class ConexionBD {
                 ejecuto = cmd.execute("INSERT INTO usuario(cedula,nombre,apellido1,apellido2,correo,telefono,contrasena) VALUES ("+cedula+",'"+nombre+"','"+apellido1+"','"+apellido2+"','"+correo+"','"+telefono+"','"+contrasena+"')");
                 
                return true;
-               // rs.close();
+               
         }
         catch(Exception e)
         {
@@ -63,7 +70,7 @@ public class ConexionBD {
                 cmd = con.createStatement();
                 ejecuto = cmd.execute("UPDATE usuario SET cedula='"+cedula+"',nombre='"+nombre+"',apellido1='"+apellido1+"' ,apellido2='"+apellido2+"' ,correo='"+correo+"' ,telefono='"+telefono+"' ,contrasena='"+contrasena+"' WHERE cedula='"+cedula+"'"); 
                return true;
-               // rs.close();
+               
         }
         catch(Exception e)
         {
@@ -81,7 +88,7 @@ public class ConexionBD {
                 cmd = con.createStatement();
                 ejecuto = cmd.execute("DELETE FROM `usuario` WHERE cedula='"+cedula+"'"); 
                return true;
-               // rs.close();
+               
         }
         catch(Exception e)
         {
@@ -101,13 +108,11 @@ public class ConexionBD {
         try {
                 cmd = con.createStatement();
                 query = "SELECT Count(correo) as cuenta FROM usuario where correo='"+correo+"' and contrasena='"+contrasena+"'";
-                //System.out.println(query);
                 rs = cmd.executeQuery(query);
                 
                 if (rs!=null) {
                     rs.next();
                     existe = rs.getInt("cuenta") != 0;
-                    //System.err.println("Existe -> "+existe);
                     return existe; 
                 }
                 
@@ -118,11 +123,8 @@ public class ConexionBD {
         }
      return false;   
     }
-//private String nombre, identidad, provincia, canton,correo, cuentaConAgua, cuentaConElectricidad,viasDeAcceso,
-//usoDeSuelo,acueducto, pozo, necesitaEnergiaElectrica, fuenteEnergiaElectrica, talaDeArboles,
-//aguasPluvialesAlcantarillado, AguasPluvialesServidumbre, movimientosDeTierraAcarreo, movimientosDeTierraMovilizacion;
 
-     
+     /*------------------------Formulario D2------------------------------------*/
     public boolean registrarFormularioD2(int contador, String nombre, String identidad, String provincia, String canton, 
             String correo, String cuentaConAgua, String cuentaConElectricidad, String viasDeAcceso, String usoDeSuelo, 
             String acueducto, String pozo, String necesitaEnergiaElectrica, String fuenteEnergiaElectrica, String talaDeArboles, 
@@ -147,6 +149,25 @@ public class ConexionBD {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
             return false;
         }        
+    }
+    
+    /*--------------------------------Reporte PDF---------------------------------------------*/
+    
+    public List<Usuario> getListado() throws SQLException
+    {
+        ResultSet rs = null;
+        Statement cmd = null;
+        Boolean existe=false;
+        String query;
+        List listado= new ArrayList<>();
+
+        while(rs.next()){
+                cmd = con.createStatement();
+                query = "SELECT* FROM usuario";
+                rs = cmd.executeQuery(query);
+                listado.add(rs);
+        }
+        return listado;
     }
     
 }
