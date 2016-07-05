@@ -86,16 +86,12 @@ public class FileUploadView {
             
             String data=encodeFileToBase64Binary(archivo);
             
-           // System.out.println("\n \n \n el archivo es: \n"+data+"\n \n ");
+            // System.out.println("\n \n \n el archivo es: \n"+data+"\n \n ");
            
             PreparedStatement stment= con.prepareStatement("Insert into archivos value(?)");
             stment.setString(1, data);
             stment.execute();
 
-           
-           
-           
-            
             //ejecuto = cmd.execute("INSERT INTO archivos(longdata) values(" +data+ ");");
             
             System.out.println("Guardado con exito");
@@ -108,14 +104,10 @@ public class FileUploadView {
     }
 
     private String encodeFileToBase64Binary(UploadedFile archivo) throws IOException {
-
-        //File file =  (File) getFile(); //new File(fileName);
-        
+     
         byte[] bytes = loadFile(archivo);
         byte[] encoded = Base64.encodeBase64(bytes);
         String encodedString = new String(encoded);
-        
-       // System.out.println("El archivo codificado es: "+encodedString);
         
         return encodedString;
     }
@@ -123,7 +115,6 @@ public class FileUploadView {
     private byte[] loadFile(UploadedFile file) throws IOException {
         InputStream is = file.getInputstream(); // new FileInputStream(file);
 
-        //long length = file.length();
         long length= file.getSize();
         
         if (length > Integer.MAX_VALUE) {
